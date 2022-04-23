@@ -1,0 +1,15 @@
+src: 'https://github.com/Jverma/vector-space-model-of-information-retrieval.git' by januverma
+
+Run:
+#run this line to load data and combines all the text files into a single json file where each line is of form [doc_id, text_contents] 
+python corpus.py "path/to/folder/containing/data" "big_data.txt" 
+
+#run this line to get vocab and compute inverted index of tf-idf vectors
+python "inverted_index.py" "big_data.txt" "index.txt"
+
+#run this line to compute lengths of tf-idf vectors
+python "length.py" "index.txt" "vector_lengths.txt"
+
+#run this line to compute the consine distances 
+#Query: the words/sentences you want to search
+!python "cosine.py" "Query" "index.txt" "vector_lengths.txt"
